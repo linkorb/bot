@@ -1,0 +1,15 @@
+name: greet
+
+patterns:
+  - "My name is {name}"
+
+slots:
+  name:
+    type: string
+    required: true
+    priority: 1
+
+fulfillment:
+  type: callable
+  callable: Bot\Example\ExampleUtil::setName
+

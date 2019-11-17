@@ -1,0 +1,33 @@
+name: greet
+
+patterns:
+  -
+    -
+      type: static
+      value:
+        - hello
+        - hi
+        - sup
+        - hey
+        - what's up
+    -
+      type: slot
+      slot: target
+      required: true
+  - "yo {target}"
+
+slots:
+  target:
+    type: string
+    required: true
+    priority: 1
+    prompts:
+      -
+        text: "Who do you want to send greetings to?"
+        patterns:
+          - "To {target}"
+
+fulfillment:
+  type: echo
+  text: "Sending greetings to {target}!"
+

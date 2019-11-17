@@ -1,0 +1,11 @@
+name: botname
+
+patterns:
+  - "what is your name"
+  - "what's your name"
+  - "who are you"
+
+fulfillment:
+  type: echo
+  text: "Hi, my name is {bot.name}!"
+

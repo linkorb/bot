@@ -1,0 +1,25 @@
+name: ping
+
+patterns:
+  - "ping {target}"
+  - "is {target} up?"
+
+slots:
+  target:
+    type: string
+    required: true
+    priority: 1
+    prompts:
+      -
+        text: "What target?"
+        patterns:
+          - "To {target}"
+
+
+confirmation:
+  text: Do you want me to ping "{target}"?
+
+fulfillment:
+  type: callable
+  callable: Bot\Example\ExampleUtil::ping
+
